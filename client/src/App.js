@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import BookingForm from "./components/BookingForm";
 import BookingList from "./components/BookingList";
-import BookingService from "./services/BookingSevice";
+import BookingService from "./services/BookingService";
 import './App.css';
 
 

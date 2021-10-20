@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 
 const Booking = ({booking, updateBooking, deleteBooking}) => {
-  // className for h3 depending on check in status
+  // className for h3 depending on check in status..
   // const checkedInClass = booking.checked_in ? 'checked-in' : 'checked-out';
   const [checkedInClass, setCheckedInClass] = useState("");
   const [checkInButtonText, setCheckInButtonText] = useState("");
