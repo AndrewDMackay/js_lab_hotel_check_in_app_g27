@@ -1,7 +1,9 @@
+
 body {
   background: #eee;
   font-family: 'Open Sans', sans-serif;
 }
+
 
 #app {
   width: 75%;
@@ -10,14 +12,18 @@ body {
   padding: 20px 40px 40px 40px;
 }
 
+
 section#bookings {
   margin-top: 40px;
 }
+
+
 #bookings-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 
 .booking-info {
   box-sizing: border-box;
@@ -29,13 +35,16 @@ section#bookings {
   flex-direction: column;
 }
 
+
 .checked-in {
   color: darkslategrey;
 }
 
+
 .checked-out {
   color: darkred;
 }
+
 
 button{
   background: white;
@@ -49,9 +58,11 @@ button{
   cursor: pointer;
 }
 
+
 h3 {
   margin-top: 0;
 }
+
 
 form {
   font-size: 16px;
@@ -59,15 +70,18 @@ form {
   flex-flow: column wrap;
 }
 
+
 form > div.group {
   display: flex;
 }
+
 
 input[type="text"],
 input[type="email"] {
   padding: 7px;
   margin: 0 10px;
 }
+
 
 input[type="submit"] {
   background: lightblue;
@@ -81,3 +95,4 @@ input[type="submit"] {
   cursor: pointer;
   max-width: fit-content;
 }
+
