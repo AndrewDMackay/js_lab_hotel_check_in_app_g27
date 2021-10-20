@@ -75,7 +75,6 @@ form {
 
 form > div.group {
   display: flex;
-  justify-content: space-between;
 }
 
 
