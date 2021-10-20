@@ -1,45 +1,66 @@
-import React, { useState } from 'react';
-import { postBooking } from '../Service/BookingService';
+import { useState } from 'react';
 
 const BookingForm = ({addBooking}) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [checkedIn, setCheckedIn] = useState(false);
 
-    const [bookingData, setBookingData] = useState({})
+  const handleNameChange = (ev) => setName(ev.target.value);
+  const handleEmailChange = (ev) => setEmail(ev.target.value);
+  const handleCheckInChange = (ev) => setCheckedIn(ev.target.checked ? ev.target.checked : false);
 
-    const onChange = (event) => {
-        bookingData[event.target.id] = event.target.value;
-        setBookingData(bookingData);
-    }
+  const handleSubmit = ev => {
+    ev.preventDefault();
+    addBooking({
+      name: name,
+      email: email,
+      checked_in: checkedIn
+    });
+    setName("");
+    setEmail("");
+    setCheckedIn(false);
+  }
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-        postBooking(bookingData).then((data) => {
-            addBooking(data);
-        })
-    }
+  return (
+    <form onSubmit={handleSubmit}>
+      <h1>Add a booking</h1>
+      <div className="group">
+        <label htmlFor="name">Guest Name:</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          value={name} 
+          required 
+          onChange={handleNameChange}
+        />
+      </div>
+      <div className="group">
+        <label htmlFor="email">Guest Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          value={email} 
+          required 
+          onChange={handleEmailChange}
+        />
+      </div>
 
-    return (
-        <form onSubmit={onSubmit} id="bookings-form" >
-            <h2>Add a Booking</h2>
-            <div className="formWrap">
-                <label htmlFor="name">Name:</label>
-                <input onChange={onChange} type="text" id="name" required />
-            </div>
-            <div className="formWrap">
-                <label htmlFor="email">Email:</label>
-                <input onChange={onChange} type="text" id="email" required />
-            </div>
-            <div className="formWrap">
-                <label htmlFor="status">Checked in status:</label>
-                <select onChange={onChange} type="status" id="status">
-                    <option value="true">Checked In</option>
-                    <option selected value="false">Pending</option>
-                </select>
-            </div>
+      <div className="group">
+        <label htmlFor="checked_in">Checked In:</label>
+        <input 
+          type="checkbox" 
+          id="checked_in" 
+          name="checked_in" 
+          value={checkedIn} 
+          onChange={handleCheckInChange}
+        />
+      </div>
 
-            <input type="submit" value="Save" id="save"/>
-	    </form>
-    )
+      <input type="submit" name="submit" value="Save" />
+    </form>
+  )
+};
 
-}
-
-export default BookingForm
+export default BookingForm;
