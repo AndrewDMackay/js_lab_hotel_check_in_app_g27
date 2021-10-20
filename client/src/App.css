@@ -68,6 +68,7 @@ form {
   font-size: 16px;
   display: flex;
   flex-flow: column wrap;
+  padding: 1.0vw
 }
 
 

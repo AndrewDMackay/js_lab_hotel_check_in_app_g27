@@ -1,4 +1,6 @@
+
 import Booking from "./Booking";
+
 
 const BookingList = ({bookings, updateBooking, deleteBooking}) => {
   const bookingNodes = bookings.map(booking => {
@@ -10,6 +12,7 @@ const BookingList = ({bookings, updateBooking, deleteBooking}) => {
     />
   });
 
+
   return (
     <section id="bookings">
       <h2>Booking List</h2>
@@ -20,4 +23,6 @@ const BookingList = ({bookings, updateBooking, deleteBooking}) => {
   )
 };
 
+
 export default BookingList;
+
