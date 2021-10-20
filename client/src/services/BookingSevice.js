@@ -1,10 +1,13 @@
+
 const baseURL = 'http://localhost:5000/api/bookings/';
+
 
 const BookingService =  {
   getBookings() {
     return fetch(baseURL)
       .then(res => res.json());
   },
+
 
   addBooking(booking) {
     return fetch(baseURL, {
@@ -17,6 +20,7 @@ const BookingService =  {
       .then(res => res.json());
   },
 
+
   updateBooking(booking) {
     return fetch(baseURL + booking._id, {
       method: 'PUT',
@@ -28,6 +32,7 @@ const BookingService =  {
       .then(res => res.json());
   },
 
+
   deleteBooking(id) {
     return fetch(baseURL + id, {
       method: 'DELETE'
@@ -35,4 +40,6 @@ const BookingService =  {
   }
 };
 
+
 export default BookingService;
+

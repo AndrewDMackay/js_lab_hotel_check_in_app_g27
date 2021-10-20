@@ -1,13 +1,17 @@
+
 import { useState } from 'react';
+
 
 const BookingForm = ({addBooking}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [checkedIn, setCheckedIn] = useState(false);
 
+
   const handleNameChange = (ev) => setName(ev.target.value);
   const handleEmailChange = (ev) => setEmail(ev.target.value);
   const handleCheckInChange = (ev) => setCheckedIn(ev.target.checked ? ev.target.checked : false);
+
 
   const handleSubmit = ev => {
     ev.preventDefault();
@@ -20,6 +24,7 @@ const BookingForm = ({addBooking}) => {
     setEmail("");
     setCheckedIn(false);
   }
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -63,4 +68,6 @@ const BookingForm = ({addBooking}) => {
   )
 };
 
+
 export default BookingForm;
+

@@ -22,7 +22,7 @@ section#bookings {
 .booking-info {
   box-sizing: border-box;
   width: 32%;
-  background: lightblue;
+  background: gainsboro;
   margin-bottom: 20px;
   padding: 20px;
   display: flex;
@@ -30,7 +30,7 @@ section#bookings {
 }
 
 .checked-in {
-  color: darkgreen;
+  color: darkslategrey;
 }
 
 .checked-out {
